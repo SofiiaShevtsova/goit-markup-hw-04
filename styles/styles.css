@@ -123,7 +123,7 @@ p {
   color: var(--accent-color);
 }
 
-.nav-list>.flex {
+.nav-list > .flex {
   gap: 50px;
 }
 
@@ -135,7 +135,7 @@ p {
   margin-left: auto;
 }
 
-.contact-list{
+.contact-list {
   gap: 30px;
 }
 
@@ -153,7 +153,7 @@ p {
   margin-right: 10px;
 }
 .contact:hover,
-.contact:focus {
+.contact:focus, .addres:hover, .addres:focus {
   color: var(--accent-color);
 }
 
@@ -234,11 +234,13 @@ p {
   color: var(--second--text-color);
 }
 
-.skils-icon {
+.skils div.flex {
+  width: 270px;
+  height: 120px;
   background-color: var(--first-bgr-color);
-
   margin-bottom: 30px;
-  padding: 25px 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -302,16 +304,17 @@ p {
   line-height: 1.19;
   text-align: center;
 }
-.team-list>.flex{
+.team-list > .flex {
   gap: 10px;
 }
 
-.icon-team svg {
-  padding: 12px;
-}
-
 .icon-link {
-  display: block;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
   color: #afb1b8;
 }
 
@@ -322,40 +325,28 @@ p {
   border-radius: 50%;
 }
 
-.icon-link svg {
-  fill: currentColor;
-}
-
 /* ----------------клієнти */
 .client {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.client li {
+.icon-client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 170px;
   height: 92px;
-}
-
-.icon-client {
-  display: block;
-
   color: rgba(175, 177, 184, 1);
   border: 1px solid rgba(175, 177, 184, 1);
   border-radius: 4px;
-}
-.icon-logo {
+  fill: currentColor;
 }
 
 .icon-client:hover,
 .icon-client:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
-}
-
-.icon-client svg {
-  padding: 16px 32px;
-  fill: currentColor;
 }
 
 /* футер */
@@ -399,7 +390,7 @@ p {
   color: var(--white-text-color);
 }
 
-.social-icon .flex{
+.social-icon .flex {
   gap: 10px;
 }
 
@@ -454,7 +445,12 @@ p {
   gap: 30px;
 }
 
-.proj-list li:hover {
+.proj-link {
+  display: block;
+  color: inherit;
+}
+
+.proj-link:hover, .proj-link:focus {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
