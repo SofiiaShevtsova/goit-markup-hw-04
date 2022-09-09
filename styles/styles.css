@@ -122,6 +122,11 @@ p {
 .nav:focus {
   color: var(--accent-color);
 }
+
+.nav-list>.flex {
+  gap: 50px;
+}
+
 .active {
   color: var(--accent-color);
 }
@@ -130,8 +135,8 @@ p {
   margin-left: auto;
 }
 
-.contact-list > li:last-child {
-  margin-left: 30px;
+.contact-list{
+  gap: 30px;
 }
 
 .contact {
@@ -150,12 +155,6 @@ p {
 .contact:hover,
 .contact:focus {
   color: var(--accent-color);
-}
-
-/* Відступи навігація */
-
-.nav-list li:not(:first-child) {
-  margin-left: 50px;
 }
 
 /* main головна */
@@ -180,9 +179,7 @@ p {
   padding-top: 200px;
   padding-bottom: 200px;
 }
-/* .hero-box {
-  text-align: center;
-} */
+
 .hero-title {
   margin-bottom: 30px;
   max-width: 700px;
@@ -216,6 +213,7 @@ p {
 
 .skils .flex {
   align-items: stretch;
+  gap: 30px;
 }
 .skils-title {
   margin-bottom: 10px;
@@ -228,10 +226,6 @@ p {
 .skils {
   padding-top: 94px;
   padding-bottom: 94px;
-}
-
-.skils li:not(:first-child) {
-  margin-left: 30px;
 }
 
 .skils-text {
@@ -308,9 +302,8 @@ p {
   line-height: 1.19;
   text-align: center;
 }
-
-.icon-team:not(:last-child) {
-  margin-right: 10px;
+.team-list>.flex{
+  gap: 10px;
 }
 
 .icon-team svg {
@@ -406,6 +399,10 @@ p {
   color: var(--white-text-color);
 }
 
+.social-icon .flex{
+  gap: 10px;
+}
+
 .logo-bot .icon-team {
   background-color: rgba(255, 255, 255, 10%);
   border-radius: 50%;
@@ -454,7 +451,7 @@ p {
 /* проекти */
 .proj-list .flex {
   flex-wrap: wrap;
-  row-gap: 30px;
+  gap: 30px;
 }
 
 .proj-list li:hover {
