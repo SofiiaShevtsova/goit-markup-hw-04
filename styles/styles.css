@@ -141,6 +141,7 @@ p {
 
 .contact {
   display: flex;
+  align-items: center;
 
   color: var(--second--text-color);
   font-weight: 500;
@@ -320,7 +321,7 @@ p {
 
 .icon-link:hover,
 .icon-link:focus {
-  color: #ffffff;
+  color: var(--white-text-color);
   background-color: var(--accent-color);
   border-radius: 50%;
 }
@@ -377,6 +378,11 @@ p {
 .bot-contact {
   margin-top: 9px;
   color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.logo-bot .icon-link {
+  color: var(--white-text-color);
 }
 
 .icon-title {
