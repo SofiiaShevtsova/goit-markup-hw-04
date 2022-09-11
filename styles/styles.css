@@ -7,6 +7,8 @@
   --first-bgr-color: #f5f4fa;
   --second-bgr-color: #2f303a;
   --all-bgr-color: #ffffff;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -121,6 +123,8 @@ p {
 .nav:hover,
 .nav:focus {
   color: var(--accent-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .nav-list > .flex {
@@ -128,7 +132,22 @@ p {
 }
 
 .active {
+  position: relative;
+
   color: var(--accent-color);
+}
+
+.active::after {
+  content: " ";
+
+  position: absolute;
+  bottom: -32px;
+
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
+  background-color: var(--accent-color);
 }
 
 .contact-list {
@@ -154,8 +173,12 @@ p {
   margin-right: 10px;
 }
 .contact:hover,
-.contact:focus, .addres:hover, .addres:focus {
+.contact:focus,
+.addres:hover,
+.addres:focus {
   color: var(--accent-color);
+
+  transition: color 250ms var(--timing-function);
 }
 
 /* main головна */
@@ -192,6 +215,51 @@ p {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+transform: scale(1);
+  transition: opacity 1000ms var(--timing-function) 500ms, transform 1000ms var(--timing-function);
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  transform: scale(0.2);
+  pointer-events: none;
+}
+
+.modal {
+  width: 528px;
+height: 581px;
+  background-color: #ffffff; 
+  
+}
+.modal-btn {
+ display: flex;
+ justify-content: center;
+  align-items: center;
+  padding: 0;
+  
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-left: auto;
+  cursor: pointer;
+
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 .button {
@@ -264,6 +332,27 @@ p {
 .work img {
   display: block;
 }
+
+.work-card{
+  position: relative;
+}
+
+.work-class {
+position: absolute;
+width: 100%;
+bottom: 0;
+
+
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding: 27px 0;
+  
+    color: var(--white-text-color);
+    background-color: rgba(47, 48, 58, 0.8);;
+}
 /* team */
 .team {
   background-color: var(--first-bgr-color);
@@ -317,13 +406,16 @@ p {
   justify-content: center;
   fill: currentColor;
   color: #afb1b8;
+  border-radius: 50%;
 }
 
 .icon-link:hover,
 .icon-link:focus {
   color: var(--white-text-color);
   background-color: var(--accent-color);
-  border-radius: 50%;
+
+  transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function) 250ms;
 }
 
 /* ----------------клієнти */
@@ -348,6 +440,9 @@ p {
 .icon-client:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
+
+  transition: color 250ms var(--timing-function),
+    border 250ms var(--timing-function);
 }
 
 /* футер */
@@ -443,6 +538,10 @@ p {
   background-color: var(--accent-color);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
     0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+
+  transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
 /* проекти */
@@ -456,9 +555,44 @@ p {
   color: inherit;
 }
 
-.proj-link:hover, .proj-link:focus {
+.proj-link:hover,
+.proj-link:focus {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+
+  transition: box-shadow 250ms var(--timing-function) ;
+}
+
+.proj-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.proj-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  opacity: 0;
+
+
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white-text-color);
+
+  transition: opcity 250ms var(--timing-function), transform 250ms var(--timing-function);
+}
+
+/* hover focus */
+.proj-link:hover .proj-text, .proj-link:focus .proj-text{
+  transform: translateY(-100%);
+  opacity:1;
+  
 }
 
 .proj-list img {
