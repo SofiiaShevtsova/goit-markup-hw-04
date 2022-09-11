@@ -231,7 +231,7 @@ p {
   justify-content: center;
 
 transform: scale(1);
-  transition: opacity 1000ms var(--timing-function) 500ms, transform 1000ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function) 500ms, transform 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden{
@@ -415,7 +415,7 @@ bottom: 0;
   background-color: var(--accent-color);
 
   transition: color 250ms var(--timing-function),
-    background-color 250ms var(--timing-function) 250ms;
+    background-color 250ms var(--timing-function);
 }
 
 /* ----------------клієнти */
